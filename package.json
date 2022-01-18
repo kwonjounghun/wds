@@ -1,10 +1,10 @@
 {
-  "name": "esmbuild",
+  "name": "wds",
   "version": "1.0.4",
   "main": "",
   "license": "MIT",
   "author": {
-    "name": "Koen Bok"
+    "name": "jounghun"
   },
   "scripts": {
     "serve": "yarn; node esmbuild/esmbuild serve ./src 8000",
