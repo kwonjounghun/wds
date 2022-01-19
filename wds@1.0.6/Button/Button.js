@@ -102,8 +102,8 @@ var require_classnames = __commonJS({
 // src/Button/Button.tsx
 var import_classnames = __toModule(require_classnames());
 import React, { useMemo, forwardRef } from "react";
-import Loader from "../Loader.js";
-import useClasses from "../useClasses.js";
+import Loader from "../Loader/Loader.js";
+import useClasses from "../useClasses/useClasses.js";
 
 // sass-plugin-0:/home/runner/work/wds/wds/main/src/Button/Button.module.scss
 var _default = {};
