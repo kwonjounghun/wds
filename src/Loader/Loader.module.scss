@@ -1,0 +1,67 @@
+.circular {
+  transform-origin: 100% 100%;
+  animation: waffle-loader-rotate 1.5s linear infinite;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: waffle-loader-dash 1.5s ease-in-out infinite,
+    waffle-loader-color 3s ease-in-out infinite;
+  stroke-linecap: round;
+
+  &.primary {
+    animation: waffle-loader-dash 1.5s ease-in-out infinite,
+      waffle-loader-color-primary 3s ease-in-out infinite;
+  }
+
+  &.white {
+    animation: waffle-loader-dash 1.5s ease-in-out infinite;
+    stroke: #fff;
+  }
+}
+
+@keyframes waffle-loader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes waffle-loader-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes waffle-loader-color {
+  100%,
+  0% {
+    stroke: #557cf2;
+  }
+
+  50% {
+    stroke: #00cca3;
+  }
+}
+
+@keyframes waffle-loader-color-primary {
+  100%,
+  0% {
+    stroke: #2ed5d5;
+  }
+
+  50% {
+    stroke: #00b2b2;
+  }
+}
