@@ -124,7 +124,7 @@ exports.cssPlugin = (options = {}) => {
                 }
             );
 
-            build.onLoad({ filter: /\.modules?\.css\.js$/, namespace: pluginNamespace }, (args) => {
+            build.onLoad({ filter: /\.modules?\.scss\.js$/, namespace: pluginNamespace }, (args) => {
                 // const { path: resolvePath, importer } = args.pluginData.resolveArgs;
                 // const importerName = path.basename(importer);
                 // console.log('[esbuild-css-modules-plugin]', `${resolvePath} => ${resolvePath}.js => ${importerName}`);

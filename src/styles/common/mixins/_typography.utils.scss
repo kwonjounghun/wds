@@ -1,0 +1,142 @@
+// Typeography
+// https://zpl.io/bokmnnG
+// ----------------------
+
+@mixin add-typography($name) {
+  @if $name == 'display4' {
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    font-size: 32px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 56px;
+      letter-spacing: -1px;
+      font-size: 48px;
+    }
+
+    @include breakpoint-large {
+      line-height: 72px;
+      letter-spacing: -1.2px;
+      font-size: 60px;
+    }
+  }
+
+  @if $name == 'display3' {
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    font-size: 32px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 48px;
+      letter-spacing: -0.8px;
+      font-size: 40px;
+    }
+
+    @include breakpoint-large {
+      line-height: 56px;
+      letter-spacing: -1px;
+      font-size: 48px;
+    }
+  }
+
+  @if $name == 'display2' {
+    line-height: 36px;
+    letter-spacing: -0.6px;
+    font-size: 28px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 40px;
+      font-size: 32px;
+    }
+
+    @include breakpoint-large {
+      line-height: 44px;
+      letter-spacing: -0.7px;
+      font-size: 36px;
+    }
+  }
+
+  @if $name == 'display1' {
+    line-height: 36px;
+    letter-spacing: -0.6px;
+    font-size: 28px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 40px;
+      font-size: 32px;
+    }
+  }
+
+  @if $name == 'headline2' {
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 36px;
+      font-size: 28px;
+    }
+  }
+
+  @if $name == 'headline1' {
+    line-height: 28px;
+    font-size: 21px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-large {
+      line-height: 32px;
+      font-size: 24px;
+    }
+  }
+
+  @if $name == 'title' {
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 700; // Bold
+
+    @include breakpoint-medium {
+      line-height: 28px;
+      font-size: 21px;
+    }
+  }
+
+  @if $name == 'subtext2' {
+    line-height: 24px;
+    font-size: 17px;
+    font-weight: 700; // Bold
+  }
+
+  @if $name == 'body2' {
+    line-height: 24px;
+    font-size: 17px;
+    font-weight: 300; // Light
+  }
+
+  @if $name == 'subtext1' {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 700; // Bold
+  }
+
+  @if $name == 'body1' {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 400; // Regular
+  }
+
+  @if $name == 'caption2' {
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: 400; // Regular
+  }
+
+  @if $name == 'caption1' {
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: 400; // Regular
+  }
+}

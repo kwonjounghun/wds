@@ -1,0 +1,11 @@
+@function color($color, $alpha: 1) {
+  @if unit($number) == '%' {
+    $alpha: (strip-unit($alpha) / 100);
+  }
+
+  @if unitless($alpha) and $alpha < 1 {
+    @return rgba($color, $alpha);
+  }
+
+  @return $color;
+}

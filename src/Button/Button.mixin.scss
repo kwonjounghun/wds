@@ -1,0 +1,55 @@
+@import '../styles/common';
+
+@mixin button-active {
+  @media (hover: hover) and (pointer: fine) {
+    &.hover,
+    &:hover {
+      @content;
+    }
+  }
+
+  // &:focus, 버튼 클릭시 active 상태가 유지되는 이슈로 제거
+  &:active,
+  &.active {
+    text-decoration: none;
+    @content;
+  }
+}
+
+@mixin button-disabled($variant: null) {
+  &.disabled,
+  &:disabled,
+  &[disabled] {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+
+    @content;
+  }
+}
+
+
+@mixin xs-icon {
+  width: 12px;
+  height: 12px;
+}
+
+@mixin sm-icon {
+  width: 16px;
+  height: 16px;
+}
+
+@mixin md-icon {
+  width: 16px;
+  height: 16px;
+}
+
+@mixin lg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@mixin xl-icon {
+  width: 24px;
+  height: 24px;
+}

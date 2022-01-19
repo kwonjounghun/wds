@@ -1,0 +1,617 @@
+@import '../styles/common';
+@import 'Button.mixin.scss';
+
+$prefix: '' !default;
+
+$transition-duration: 150ms;
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+
+  > .svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#{$prefix}.button {
+  position: relative;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: $transition-duration;
+  border: 1px solid $color-grey-400;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 9px 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  line-height: 1.43;
+  white-space: nowrap;
+  color: $color-grey-700;
+  font-size: 14px;
+  font-weight: 500;
+  box-sizing: border-box !important;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+  }
+
+  @at-root a#{&} {
+    display: inline-block;
+    align-items: center;
+    padding-top: 0.07em;
+    text-decoration: none;
+
+    &.block {
+      text-align: center;
+    }
+  }
+
+  // Hover, Active
+  @include button-active {
+    border-width: $color-grey-500;
+    background-color: $color-grey-200;
+  }
+
+  // Disabled
+  @include button-disabled;
+
+  // Circular
+  &.circular {
+    border-radius: 999em;
+  }
+
+  // Full Width
+  &.block {
+    width: 100%;
+  }
+
+  // Loading
+  &.loading {
+    cursor: default;
+    pointer-events: none;
+
+    > span {
+      opacity: 0;
+    }
+
+    .loader {
+      opacity: 1;
+    }
+
+    &.iconOnly {
+      > span {
+        svg {
+          opacity: 0;
+        }
+      }
+    }
+
+    &.primary:hover {
+      .loader {
+        circle {
+          stroke: #fff !important;
+        }
+      }
+    }
+  }
+
+  // Contained Button
+  // ----------------
+  &.contained {
+    border-color: $color-grey-300;
+    background-color: $color-grey-300;
+
+    @include button-active {
+      border-color: $color-grey-400;
+      background-color: $color-grey-400;
+    }
+  }
+
+  // Text
+  // ----
+  &.text {
+    border-color: transparent;
+
+    @include button-active {
+      background-color: $color-grey-300;
+    }
+  }
+
+  // Primary Color
+  // -------------
+  &.primary {
+    border-color: $color-primary-600;
+    color: $color-primary-800;
+
+    @include button-active {
+      border-color: $color-primary-600;
+      background-color: $color-primary-100;
+    }
+
+    &.contained {
+      border-color: $color-primary-600;
+      background-color: $color-primary-600;
+      color: $color-rgba-light-100;
+
+      @include button-active {
+        border-color: $color-primary-700;
+        background-color: $color-primary-700;
+        color: $color-rgba-light-100;
+      }
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-primary-100;
+        color: $color-primary-800;
+      }
+    }
+  }
+
+  // Secondary Color
+  // ---------------
+  &.secondary {
+    border-color: $color-grey-200;
+    color: $color-grey-800;
+
+    @include button-active {
+      border-color: $color-grey-200;
+      background-color: $color-grey-000;
+    }
+
+    &.contained {
+      border-color: $color-grey-600;
+      background-color: $color-grey-600;
+      color: $color-rgba-light-100;
+
+      @include button-active {
+        border-color: $color-grey-700;
+        background-color: $color-grey-700;
+        color: $color-rgba-light-100;
+      }
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-grey-100;
+        color: $color-grey-800;
+      }
+    }
+  }
+
+  // TertiaryMint
+  // ---------------
+  &.tertiaryMint {
+    border-color: $color-primary-100;
+    color: $color-primary-800;
+
+    &.contained {
+      border-color: $color-primary-100;
+      background-color: $color-primary-100;
+      color: $color-primary-800;
+    }
+
+    @include button-active {
+      border-color: $color-primary-200;
+      background-color: $color-primary-200;
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-primary-100;
+        color: $color-primary-800;
+      }
+    }
+  }
+
+  // TertiaryGrey
+  // ---------------
+  &.tertiaryGrey {
+    border-color: $color-grey-100;
+    color: $color-grey-700;
+
+    &.contained {
+      border-color: $color-grey-100;
+      background-color: $color-grey-100;
+      color: $color-grey-700;
+    }
+
+    @include button-active {
+      border-color: $color-grey-200;
+      background-color: $color-grey-200;
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-grey-100;
+        color: $color-grey-800;
+      }
+    }
+  }
+
+  // Info Color
+  // ----------
+  &.info {
+    border-color: $color-info-500;
+    color: $color-info-800;
+
+    @include button-active {
+      border-color: $color-info-700;
+      background-color: $color-info-100;
+    }
+
+    &.contained {
+      border-color: $color-info-500;
+      background-color: $color-info-500;
+      color: $color-rgba-light-100;
+
+      @include button-active {
+        border-color: $color-info-600;
+        background-color: $color-info-600;
+        color: $color-rgba-light-100;
+      }
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-info-100;
+        color: $color-info-800;
+      }
+    }
+  }
+
+  // Danger Color
+  // ------------
+  &.danger {
+    border-color: $color-danger-500;
+    color: $color-danger-800;
+
+    @include button-active {
+      border-color: $color-danger-700;
+      background-color: $color-danger-100;
+    }
+
+    &.contained {
+      border-color: $color-danger-500;
+      background-color: $color-danger-500;
+      color: $color-rgba-light-100;
+
+      @include button-active {
+        border-color: $color-danger-600;
+        background-color: $color-danger-600;
+        color: $color-rgba-light-100;
+      }
+    }
+
+    &.text {
+      border-color: transparent;
+
+      @include button-active {
+        background-color: $color-danger-100;
+        color: $color-danger-800;
+      }
+    }
+  }
+
+  // Icon
+  // ----
+  svg.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    &:first-child {
+      margin-right: 6px;
+    }
+
+    &:last-child {
+      margin-left: 6px;
+    }
+  }
+
+  .children {
+    vertical-align: top;
+  }
+
+  // size
+  // ----
+  &.xs {
+    padding: 4px 12px;
+    line-height: 1.5;
+    font-size: 12px;
+
+    svg.icon {
+      @include xs-icon;
+
+      &:first-child {
+        margin-right: 4px;
+      }
+
+      &:last-child {
+        margin-left: 4px;
+      }
+    }
+
+    &.startIcon {
+      padding-left: 8px;
+    }
+
+    &.endIcon {
+      padding-right: 8px;
+    }
+  }
+
+  &.sm {
+    padding: 6px 12px;
+    line-height: 1.5;
+    font-size: 12px;
+
+    svg.icon {
+      @include sm-icon;
+
+      &:first-child {
+        margin-right: 4px;
+      }
+
+      &:last-child {
+        margin-left: 4px;
+      }
+    }
+
+    &.startIcon {
+      padding-left: 8px;
+    }
+
+    &.endIcon {
+      padding-right: 8px;
+    }
+  }
+
+  &.md {
+    padding: 9px 16px;
+    line-height: 1.45;
+    font-size: 14px;
+
+    svg.icon {
+      @include md-icon;
+
+      &:first-child {
+        margin-right: 6px;
+      }
+
+      &:last-child {
+        margin-left: 6px;
+      }
+    }
+
+    &.startIcon {
+      padding-left: 10px;
+    }
+
+    &.endIcon {
+      padding-right: 10px;
+    }
+  }
+
+  &.lg {
+    padding: 9px 24px;
+    line-height: 1.75;
+    font-size: 16px;
+
+    svg.icon {
+      @include lg-icon;
+
+      &:first-child {
+        margin-right: 6px;
+      }
+
+      &:last-child {
+        margin-left: 6px;
+      }
+    }
+
+    &.startIcon {
+      padding-left: 18px;
+    }
+
+    &.endIcon {
+      padding-right: 18px;
+    }
+  }
+
+  &.xl {
+    padding: 14px 28px;
+    line-height: 1.4;
+    font-size: 18px;
+
+    svg.icon {
+      @include xl-icon;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+
+      &:last-child {
+        margin-left: 8px;
+      }
+    }
+
+    &.startIcon {
+      padding-left: 20px;
+    }
+
+    &.endIcon {
+      padding-right: 20px;
+    }
+  }
+
+  &.inline-block {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    line-height: 1.25;
+  }
+
+  &.iconOnly {
+    padding: 12px;
+    height: auto;
+
+    & > span {
+      svg {
+        @include md-icon;
+      }
+    }
+
+    &.xs {
+      padding: 8px;
+
+      & > span {
+        svg {
+          @include xs-icon;
+        }
+      }
+    }
+
+    &.sm {
+      padding: 8px;
+
+      & > span {
+        svg {
+          @include sm-icon;
+        }
+      }
+    }
+
+    &.md {
+      padding: 12px;
+
+      & > span {
+        svg {
+          @include md-icon;
+        }
+      }
+    }
+
+    &.lg {
+      padding: 14px;
+
+      & > span {
+        svg {
+          @include lg-icon;
+        }
+      }
+    }
+
+    &.xl {
+      padding: 16px;
+
+      & > span {
+        svg {
+          @include xl-icon;
+        }
+      }
+    }
+  }
+
+  // circular
+  // @include add-circular;
+
+  // Color
+  // -----
+  // @include btn-color('primary', $color-primary3,  $color-primary4, $color-primary3, $color-white, $color-white);
+  // @include btn-color('gray', $color-cool-gray700, $color-cool-gray900, $color-cool-gray900, $color-white, $color-white);
+  // @include btn-color('blue', $color-info300, $color-info500, $color-info400, $color-white, $color-white);
+  // @include btn-color('red', $color-danger300, $color-danger500, $color-danger400, $color-white, $color-white);
+
+  // Style
+  // -----
+
+
+  // Icon
+  // ----
+  // 버튼에 아이콘만 사용할 때
+  // &.icon {
+  //   padding: 0;
+  //   width: 48px;
+  //   overflow: hidden;
+  //   font-size: 32px;
+  //   box-sizing: border-box;
+
+  //   @include set-iconsize;
+
+  //   // 버튼에 [title] 대신 [aria-label]을 사용하고
+  //   // 내부에 <i>태그로 아이콘을 지정하게 되면 툴팁이 생성된다.
+  //   &.icon[aria-label] {
+  //     position: relative;
+  //     overflow-x: visible;
+  //     overflow-y: visible;
+
+  //     $tooltip-bg-color: rgba(#000, 0.6);
+
+  //     &::before,
+  //     &::after {
+  //       display: none;
+  //       position: absolute;
+  //       top: 100%;
+  //       right: 50%;
+  //       z-index: 100000; // stylelint-disable-line plugin/z-index-value-constraint
+  //     }
+
+  //     &::before {
+  //       margin-right: -5px;
+  //       border: 5px solid transparent;
+  //       border-top: 0;
+  //       border-bottom: 5px solid $tooltip-bg-color;
+  //       content: '';
+  //     }
+
+  //     &::after {
+  //       transform: translateX(50%);
+  //       margin-top: 5px;
+  //       border-radius: 6px;
+  //       background: $tooltip-bg-color;
+  //       padding: 0.3em 0.8em;
+  //       text-transform: none;
+  //       text-shadow: none;
+  //       line-height: 1.5;
+  //       word-wrap: break-word;
+  //       white-space: nowrap;
+  //       color: #fff;
+  //       font-size: 0.8em;
+  //       content: attr(aria-label);
+  //       pointer-events: none;
+  //     }
+
+  //     &:hover,
+  //     &:focus,
+  //     &.tt-hold {
+  //       &::before,
+  //       &::after {
+  //         display: block;
+  //       }
+  //     }
+  //   }
+  // }
+}

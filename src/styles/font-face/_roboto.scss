@@ -1,0 +1,48 @@
+/* Latin glyphs */
+$unicode-range: U+000-5FF;
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 300;
+  font-style: normal;
+  src: local('Roboto Light'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Light.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Light.ttf') format('truetype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Roboto'),
+    local('Roboto-Regular'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Regular.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  src: local('Roboto Medium'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Medium.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Medium.ttf') format('truetype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Roboto Bold'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Bold.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  unicode-range: $unicode-range;
+}
+

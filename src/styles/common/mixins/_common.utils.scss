@@ -1,0 +1,118 @@
+@mixin background-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+}
+
+@mixin clearfix {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+@mixin text-ellipsis($line: 0, $base-style: true) {
+  @if $base-style {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @if $line > 1 {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+
+  @else {
+    white-space: nowrap;
+  }
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin bg-backdrop($color: #fff) {
+  background: rgba($color, 0.95);
+
+  @supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+    background-color: rgba($color, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+}
+
+
+@mixin only-ie($version: null) {
+  @if $version == 10 {
+    @at-root html:global(.msie.msie10) & {
+      @content;
+    }
+  }
+
+  @else if $version == 11 {
+    @at-root html:global(.msie.msie11) & {
+      @content;
+    }
+  }
+
+  @else {
+    @at-root html:global(.msie) & {
+      @content;
+    }
+  }
+}
+
+@mixin wadiz-app {
+  @at-root html:global(.wadiz-app) & {
+    @content;
+  }
+}
+
+@mixin wadiz-ios-app {
+  @at-root html:global(.wadiz-app.wadiz-app-ios) & {
+    @content;
+  }
+}
+
+@mixin wadiz-android-app {
+  @at-root html:global(.wadiz-app.wadiz-app-android) & {
+    @content;
+  }
+}
+
+// .block & .fluid
+@mixin add-block-fluid {
+  &.block,
+  &.fluid {
+    width: 100%;
+    text-align: center;
+  }
+
+  @include media-other {
+    &.fluid {
+      width: auto;
+    }
+  }
+}
+
+@mixin add-circular {
+  &.circular {
+    border-radius: 3em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@mixin font-blind {
+  display: inline-block;
+  margin: -1px;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}

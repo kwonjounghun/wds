@@ -4,6 +4,7 @@ const esbuild = require('esbuild')
 const globby = require('globby');
 const { esmPlugin } = require("./plugin.esm")
 const { cssPlugin } = require("./plugin.css")
+const { sassPlugin } = require('esbuild-sass-plugin');
 
 const color = (n, v) => `\x1b[${n}m${v}\x1b[0m`
 const defaultPath = join(process.cwd(), "src")
@@ -18,7 +19,7 @@ async function getBuildOptions(path) {
         format: 'esm',
         bundle: true,
         external: ["react", "react/jsx-runtime", "react-dom", "framer", "framer-motion"],
-        plugins: [esmPlugin, cssPlugin({ inject: true })],
+        plugins: [esmPlugin, sassPlugin()],
     }
 }
 

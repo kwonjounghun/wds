@@ -1,0 +1,54 @@
+// U+0020-U+007E (로마자 기본)
+// https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A7%88%EC%9E%90_%EA%B8%B0%EB%B3%B8
+// U+1100-U+11F9 (한글 자소)
+// https://en.wikipedia.org/wiki/Hangul_Jamo_(Unicode_block)
+// U+3131-U+318E (한글 낱자)
+// https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B8%80_%EB%82%B1%EC%9E%90_%EB%AA%A9%EB%A1%9D
+// U+327F (KS마크)
+// http://www.fileformat.info/info/unicode/char/327f/index.htm
+// U+AC00-U+D7A3 (한글 음절)
+// https://en.wikipedia.org/wiki/Hangul_Syllables
+// https://en.wiktionary.org/wiki/Appendix:Unicode/Hangul_Syllables
+// U+FF01-U+FF60 (Halfwidth and Fullwidth Forms)
+// http://unicode.org/charts/PDF/UFF00.pdf
+$unicode-range: U+0020-007E, U+1100-11F9, U+3131-318E, U+327F-327F, U+AC00-D7A3, U+FF01-FF60;
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+  font-style: normal;
+  src: url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Light.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Light.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Light.otf') format('opentype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Regular.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Regular.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Regular.otf') format('opentype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  font-style: normal;
+  src: url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Medium.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Medium.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Medium.otf') format('opentype');
+  unicode-range: $unicode-range;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Bold.woff2') format('woff2'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Bold.woff') format('woff'),
+    url('https://static.wadiz.kr/assets/fonts/notosans/NotoSansKR-Bold.otf') format('opentype');
+  unicode-range: $unicode-range;
+}

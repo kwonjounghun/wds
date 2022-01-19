@@ -1,0 +1,9 @@
+@import '../base';
+
+@function em($size, $font-size: $font-size) {
+  @if $size == null {
+    @error 'em으로 변환 될 값을 pixel 단위로 입력해 주세요.';
+  }
+
+  @return (($size / $font-size) * 1em);
+}

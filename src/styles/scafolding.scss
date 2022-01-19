@@ -1,0 +1,13 @@
+@import 'common/base';
+@import 'common/color';
+@import 'font-face';
+
+html,
+body,
+input,
+button,
+textarea {
+  color: $color-grey-900;
+  font-family: $font-family;
+  font-size: $font-size;
+}
