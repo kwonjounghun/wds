@@ -75,7 +75,71 @@ var import_classnames = __toModule(require_classnames());
 import React, { forwardRef } from "react";
 
 // sass-plugin-0:/home/runner/work/wds/wds/main/src/Loader/Loader.module.scss
-var _default = {};
+var css = `._circular_1krue_1 {
+  transform-origin: 100% 100%;
+  animation: _waffle-loader-rotate_1krue_1 1.5s linear infinite;
+}
+
+._path_1krue_6 {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: _waffle-loader-dash_1krue_1 1.5s ease-in-out infinite, _waffle-loader-color_1krue_1 3s ease-in-out infinite;
+  stroke-linecap: round;
+}
+._path_1krue_6._primary_1krue_12 {
+  animation: _waffle-loader-dash_1krue_1 1.5s ease-in-out infinite, _waffle-loader-color-primary_1krue_1 3s ease-in-out infinite;
+}
+._path_1krue_6._white_1krue_15 {
+  animation: _waffle-loader-dash_1krue_1 1.5s ease-in-out infinite;
+  stroke: #fff;
+}
+
+@keyframes _waffle-loader-rotate_1krue_1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes _waffle-loader-dash_1krue_1 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes _waffle-loader-color_1krue_1 {
+  100%, 0% {
+    stroke: #557cf2;
+  }
+  50% {
+    stroke: #00cca3;
+  }
+}
+@keyframes _waffle-loader-color-primary_1krue_1 {
+  100%, 0% {
+    stroke: #2ed5d5;
+  }
+  50% {
+    stroke: #00b2b2;
+  }
+}`;
+document.head.appendChild(document.createElement("style")).appendChild(document.createTextNode(css));
+var Loader_module_default = {
+  "circular": "_circular_1krue_1",
+  "waffleLoaderRotate": "_waffle-loader-rotate_1krue_1",
+  "path": "_path_1krue_6",
+  "waffleLoaderDash": "_waffle-loader-dash_1krue_1",
+  "waffleLoaderColor": "_waffle-loader-color_1krue_1",
+  "primary": "_primary_1krue_12",
+  "waffleLoaderColorPrimary": "_waffle-loader-color-primary_1krue_1",
+  "white": "_white_1krue_15"
+};
 
 // src/Loader/Loader.tsx
 var Loader = forwardRef(({
@@ -87,11 +151,11 @@ var Loader = forwardRef(({
   ref,
   "aria-label": "Loading"
 }, /* @__PURE__ */ React.createElement("g", {
-  className: _default.circular
+  className: Loader_module_default.circular
 }, /* @__PURE__ */ React.createElement("circle", {
-  className: (0, import_classnames.default)(_default.path, {
-    [_default.primary]: color === "primary",
-    [_default.white]: color === "white"
+  className: (0, import_classnames.default)(Loader_module_default.path, {
+    [Loader_module_default.primary]: color === "primary",
+    [Loader_module_default.white]: color === "white"
   }),
   cx: "50",
   cy: "50",
