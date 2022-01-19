@@ -1,5 +1,5 @@
 // src/index.tsx
-import { Button } from "./Button.js";
+import { default as default2 } from "./Button.js";
 export {
-  Button
+  default2 as Button
 };
