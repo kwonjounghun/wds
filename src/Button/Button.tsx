@@ -1,8 +1,8 @@
 import React, { useMemo, forwardRef } from 'react';
 import cx from 'classnames';
 
-import Loader from '../Loader';
-import useClasses from '../useClasses';
+import Loader from '../Loader/Loader';
+import useClasses from '../useClasses/useClasses';
 import styles from './Button.module.scss';
 
 /**
