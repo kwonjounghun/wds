@@ -118,4 +118,4 @@ ImageWrap.defaultProps = {
   className: null,
 };
 
-export default React.memo(ImageWrap);
+export default ImageWrap;

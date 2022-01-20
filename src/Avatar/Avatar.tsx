@@ -103,4 +103,4 @@ export const Avatar = forwardRef<HTMLAnchorElement | HTMLButtonElement, IAvatarP
   },
 );
 
-export default React.memo(Avatar);
+export default Avatar;
