@@ -12,17 +12,17 @@ export interface InputProps<T = HTMLInputElement> extends Omit<React.InputHTMLAt
 
   /** Input 상태 */
   status?: 'error';
-  
+
   className?: string;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(function ({
+function Input({
   type = 'text',
   size = 'md',
   status,
   className,
   ...props
-}, ref) {
+}: InputProps) {
   const classes = cx(
     styles.input,
     size && {
@@ -44,6 +44,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function ({
       aria-invalid={status === 'error' ? "true" : "false"}
     />
   );
-});
+};
 
 export default Input;
