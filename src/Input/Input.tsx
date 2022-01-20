@@ -40,7 +40,6 @@ function Input({
       {...props}
       type={type}
       className={classes}
-      ref={ref}
       aria-invalid={status === 'error' ? "true" : "false"}
     />
   );
