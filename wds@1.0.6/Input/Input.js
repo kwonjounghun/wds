@@ -194,7 +194,7 @@ var Input_module_default = {
 };
 
 // src/Input/Input.tsx
-var Input = forwardRef((_a, ref) => {
+var Input = forwardRef(function(_a, ref) {
   var _b = _a, {
     type = "text",
     size = "md",
@@ -222,7 +222,6 @@ var Input = forwardRef((_a, ref) => {
 });
 var Input_default = Input;
 export {
-  Input,
   Input_default as default
 };
 /*!
