@@ -214,7 +214,7 @@ var Avatar = forwardRef((_a, ref) => {
     onVisible
   }));
 });
-var Avatar_default = React.memo(Avatar);
+var Avatar_default = Avatar;
 export {
   Avatar,
   AvatarSize,

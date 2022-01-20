@@ -76,7 +76,7 @@ ImageWrap.defaultProps = {
   imageUrl: "",
   className: null
 };
-var ImageWrap_default = React.memo(ImageWrap);
+var ImageWrap_default = ImageWrap;
 export {
   ImageWrap_default as default
 };
