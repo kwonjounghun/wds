@@ -101,7 +101,7 @@ var require_classnames = __commonJS({
 
 // src/Input/Input.tsx
 var import_classnames = __toModule(require_classnames());
-import React, { forwardRef } from "react";
+import React from "react";
 
 // sass-plugin-0:/home/runner/work/wds/wds/main/src/Input/Input.module.scss
 var css = `/**
@@ -194,7 +194,7 @@ var Input_module_default = {
 };
 
 // src/Input/Input.tsx
-var Input = forwardRef(function(_a, ref) {
+function Input(_a) {
   var _b = _a, {
     type = "text",
     size = "md",
@@ -219,7 +219,7 @@ var Input = forwardRef(function(_a, ref) {
     ref,
     "aria-invalid": status === "error" ? "true" : "false"
   }));
-});
+}
 var Input_default = Input;
 export {
   Input_default as default
