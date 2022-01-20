@@ -16,13 +16,13 @@ export interface InputProps<T = HTMLInputElement> extends Omit<React.InputHTMLAt
   className?: string;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(({
+const Input = forwardRef<HTMLInputElement, InputProps>(function ({
   type = 'text',
   size = 'md',
   status,
   className,
   ...props
-}, ref) => {
+}, ref) {
   const classes = cx(
     styles.input,
     size && {
