@@ -1,0 +1,81 @@
+@import '../styles/common';
+
+$input-transition-duration: 150ms;
+
+.input {
+  display: block;
+  transition-property: border-color, background-color, color;
+  transition-duration: $input-transition-duration;
+  outline: none;
+  border: 1px solid $color-grey-300;
+  border-radius: 3px;
+  background-color: $color-rgba-light-100;
+  padding-right: 16px;
+  padding-left: 16px;
+  width: 100%;
+  height: auto;
+  color: $color-grey-900;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+
+  @include body-1-regular;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: $color-grey-600;
+    }
+  }
+
+  &:focus,
+  &.active {
+    border-color: $color-primary-600;
+  }
+
+  &[readonly],
+  &[disabled] {
+    border-color: $color-grey-100;
+    background-color: $color-grey-000;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &[disabled],
+  &.disabled {
+    color: $color-grey-500;
+  }
+
+  &.error {
+    border-color: $color-danger-600;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-grey-500;
+  }
+
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  &.sm {
+    height: 40px;
+    min-height: 40px;
+
+    @include body-2-regular;
+  }
+
+  &.md {
+    height: 48px;
+    min-height: 48px;
+  }
+
+  &.lg {
+    height: 56px;
+    min-height: 56px;
+
+    @include title-6;
+    font-weight: normal;
+  }
+}
