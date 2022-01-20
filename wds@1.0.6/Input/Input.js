@@ -216,7 +216,6 @@ function Input(_a) {
   return /* @__PURE__ */ React.createElement("input", __spreadProps(__spreadValues({}, props), {
     type,
     className: classes,
-    ref,
     "aria-invalid": status === "error" ? "true" : "false"
   }));
 }
